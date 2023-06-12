@@ -5,7 +5,21 @@
     <script src="https://kit.fontawesome.com/044fa3f380.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <header></header>
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="#">Tentang KUR</a></li>
+                <li><a href="#">Daftar Penyalur</a></li>
+                <li><a href="#">Simulasi</a></li>
+                <li><a href="#">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <a href="{{ url_for('login') }}" class="button">Sign In</a>
+            <a href="{{ url_for('daftar') }}" class="button">Sign Up</a>
+        </div>
+    </header>
    <main>
     <div>
         <article class="top_text">

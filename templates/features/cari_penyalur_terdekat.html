@@ -12,19 +12,22 @@
 </head>
 <body>
 
-<div class="container-fluid ">7u6
-        <div class="col">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
-            <div class="navbar-nav">
-                
-                <a class="nav-link" href="#about">Tentang KUR</a>
-                <a class="nav-link active" aria-current="page" href="#">Dafar Penyalur</a>
-                <a class="nav-link" href="#">Simulasi</a>
-                <a class="nav-link" href="#">Analisis</a>
-                 </div>
-            </div> 
-        </div>    
-    </div>
+<div class="container-fluid ">
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="#">Tentang KUR</a></li>
+                <li><a href="#">Daftar Penyalur</a></li>
+                <li><a href="#">Simulasi</a></li>
+                <li><a href="#">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <a href="{{ url_for('login') }}" class="button">Sign In</a>
+            <a href="{{ url_for('daftar') }}" class="button">Sign Up</a>
+        </div>
+    </header>
 
         <div class="col">
             <div class="dropdown">    

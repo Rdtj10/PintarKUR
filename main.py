@@ -29,7 +29,7 @@ def login():
             if account:
                 session['loggedin'] = True
                 session['nama'] = account['nama']
-                return redirect(url_for('cari'))
+                return redirect(url_for('analisis'))
             else:
                 flash("Email/password! salah", "danger")
     return render_template('auth/login.html',title="Login")
@@ -79,15 +79,18 @@ def cari_terdekat():
 #End of Cari
 
 
+@app.route('/analisis')
+def analisis():
+    if 'loggedin' in session:
+        return render_template('features/analisis.html',title="Analisis")
+    return redirect('login')
+
 #Home
 @app.route('/')
 def home():
     if 'loggedin' in session:
         return render_template('auth/home.html',nama=session['nama'],title="Home")
     return redirect(url_for('login'))
-
-
-    
 
 if __name__ == "__main__" :
     app.run(debug=True)

@@ -13,6 +13,7 @@ body{
   
 }
 
+/* Header */
 header.head-container{
   max-width: 1600px;
   width: 100%;
@@ -71,6 +72,8 @@ a.button {
   font-size: 35pt;
   padding-left: 10px;
 }
+/* End Header */
+
 
 .hero{
   width: 100%;
@@ -152,4 +155,10 @@ footer{
   text-align: center;
   background-color: #fd7e14;
   color: antiquewhite;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+      width: 100%;
+  }
 }
