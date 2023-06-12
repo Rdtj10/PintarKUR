@@ -81,9 +81,9 @@ def cari_terdekat():
 
 @app.route('/analisis')
 def analisis():
-    if 'loggedin' in session:
-        return render_template('features/analisis.html',title="Analisis")
-    return redirect('login')
+    #if 'loggedin' in session:
+    return render_template('features/analisis.html',title="Analisis")
+    #return redirect('login')
 
 #Home
 @app.route('/')
