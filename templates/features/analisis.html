@@ -28,77 +28,77 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="#" role="form" method="post" autocomplete="off">
+                        <form action="{{ url_for('predict')}}" role="form" method="post">
                             <div class="form-group form-padding">
-                                <h2>Bussines Information</h2>
+                                <br>
+                                <h4 style="font-weight: bold;">Business Information</h4>
                                 <div class="mb-3">
                                     <label>State</label>
-                                    <select class="form-select" aria-label="State">
+                                    <select name="state" class="form-select" aria-label="State">
                                         <option selected>Select your business's state location</option>
-                                        <option value="1">NC - North Carolina</option>
-                                        <option value="2">AR - Arkansas</option>
-                                        <option value="3">CA - California</option>
-                                        <option value="4">FL - Florida</option>
-                                        <option value="5">LA - Louisiana</option> 
-                                        <option value="6">TX - Texas</option>
-                                        <option value="7">TN - Tennessee</option>
-                                        <option value="8">MD - Maryland </option>
-                                        <option value="9">ME - Maine</option>
-                                        <option value="10">AK - Alaska</option>
-                                        <option value="11">CO - Colorado</option>
-                                        <option value="12">WA - Washington</option>
-                                        <option value="13">KS - Kansas</option>
-                                        <option value="14">MI - Michigan</option>
-                                        <option value="15">IN - Indiana</option>
-                                        <option value="16">NM - New Mexico</option>
-                                        <option value="17">NV - Nevada</option>
-                                        <option value="18">VA - Virginia</option>
-                                        <option value="19">AZ - Arizona</option>
-                                        <option value="20">OR - Oregon</option>
-                                        <option value="21">MN - Minnesota</option>
-                                        <option value="22">NH - New Hampshire</option>
-                                        <option value="23">NY - New York</option>
-                                        <option value="24">IL - Illinois</option>
-                                        <option value="25">SC - South Carolina</option>
-                                        <option value="26">AL - Alabama</option>
-                                        <option value="27">MT - Montana</option>
-                                        <option value="28">MS - Mississippi</option>
-                                        <option value="29">MA - Massachusetts</option>
-                                        <option value="30">UT - Utah</option>
-                                        <option value="31">PA - Pennsylvania</option>
-                                        <option value="32">MO - Missouri</option>
-                                        <option value="33">ND - North Dakota</option>
-                                        <option value="34">GA - Georgia</option>
-                                        <option value="35">CT - Connecticut</option>
-                                        <option value="36">RI - Rhode Island</option>
-                                        <option value="37">ID - Idaho</option>
-                                        <option value="38">WY - Wyoming</option>
-                                        <option value="39">WI - Wisconsin</option>
-                                        <option value="40">NJ - New Jersey</option>
-                                        <option value="41">NE - Nebraska</option>
-                                        <option value="42">OH - Ohio</option>
-                                        <option value="43">IA - Iowa</option>
-                                        <option value="44">OK - Oklahoma</option>
-                                        <option value="45">VT - Vermont</option>
-                                        <option value="46">WV - West Virginia</option>
-                                        <option value="47">DE - Delaware</option>
-                                        <option value="48">KY - Kentucky</option>
-                                        <option value="49">DC - District of Columbia</option>
-                                        <option value="50">HI - Hawaii</option>
-                                        <option value="51">SD - South Dakota</option> 
+                                        <option value="NC">NC - North Carolina</option>
+                                        <option value="AR">AR - Arkansas</option>
+                                        <option value="CA">CA - California</option>
+                                        <option value="FL">FL - Florida</option>
+                                        <option value="LA">LA - Louisiana</option> 
+                                        <option value="TX">TX - Texas</option>
+                                        <option value="TN">TN - Tennessee</option>
+                                        <option value="MD">MD - Maryland </option>
+                                        <option value="ME">ME - Maine</option>
+                                        <option value="AK">AK - Alaska</option>
+                                        <option value="CO">CO - Colorado</option>
+                                        <option value="WA">WA - Washington</option>
+                                        <option value="KS">KS - Kansas</option>
+                                        <option value="MI">MI - Michigan</option>
+                                        <option value="IN">IN - Indiana</option>
+                                        <option value="NM">NM - New Mexico</option>
+                                        <option value="NV">NV - Nevada</option>
+                                        <option value="VA">VA - Virginia</option>
+                                        <option value="AZ">AZ - Arizona</option>
+                                        <option value="OR">OR - Oregon</option>
+                                        <option value="MN">MN - Minnesota</option>
+                                        <option value="NH">NH - New Hampshire</option>
+                                        <option value="NY">NY - New York</option>
+                                        <option value="IL">IL - Illinois</option>
+                                        <option value="SC">SC - South Carolina</option>
+                                        <option value="AL">AL - Alabama</option>
+                                        <option value="MT">MT - Montana</option>
+                                        <option value="MS">MS - Mississippi</option>
+                                        <option value="MA">MA - Massachusetts</option>
+                                        <option value="UT">UT - Utah</option>
+                                        <option value="PA">PA - Pennsylvania</option>
+                                        <option value="MO">MO - Missouri</option>
+                                        <option value="ND">ND - North Dakota</option>
+                                        <option value="GA">GA - Georgia</option>
+                                        <option value="CT">CT - Connecticut</option>
+                                        <option value="RI">RI - Rhode Island</option>
+                                        <option value="ID">ID - Idaho</option>
+                                        <option value="WY">WY - Wyoming</option>
+                                        <option value="WI">WI - Wisconsin</option>
+                                        <option value="NJ">NJ - New Jersey</option>
+                                        <option value="NE">NE - Nebraska</option>
+                                        <option value="OH">OH - Ohio</option>
+                                        <option value="IA">IA - Iowa</option>
+                                        <option value="OK">OK - Oklahoma</option>
+                                        <option value="VT">VT - Vermont</option>
+                                        <option value="WV">WV - West Virginia</option>
+                                        <option value="DE">DE - Delaware</option>
+                                        <option value="KY">KY - Kentucky</option>
+                                        <option value="DC">DC - District of Columbia</option>
+                                        <option value="HI">HI - Hawaii</option>
+                                        <option value="SD">SD - South Dakota</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Urban Area</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Is your business located in Urban Area?</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                    <label>Area (Urban/Rural)</label>
+                                    <select name= "urban_area" class="form-select" aria-label="Default select example">
+                                        <option value="1">Urban</option>
+                                        <option value="2">Rural</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label>Business Sector</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="business_sector" class="form-select" aria-label="Default select example">
                                         <option selected>Is your business located in Urban Area?</option>
                                         <option value="11">11 - Agriculture, forestry, fishing and hunting</option>
                                         <option value="21">21 - Mining, quarrying, and oil and gas extraction</option>
@@ -124,65 +124,66 @@
                                 </div>
                                 <div class="mb-3">
                                     <label>New Existing Business</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="new_existing_business" class="form-select" aria-label="Default select example">
                                         <option selected>Answer “Yes” if your business still under 2 years </option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                        <option value="2">Yes</option>
+                                        <option value="1">No</option>
                                     </select>
-                                </div>
-                                <div class="mb-3 form-group form-padding">
-                                    <label>Number of Employee</label>
-                                    <input type="text" name='' class="form-control form-rad" placeholder="Number of employee, ex. 4">
-                                </div>
-                                <div class="mb-3 form-group form-padding">
-                                    <label>Created Job</label>
-                                    <input type="text" name='' class="form-control form-rad" placeholder="Number of new employee this year, ex. 2">
-                                </div>
-                                </div>
-                                <div class="mb-3 form-group form-padding">
-                                    <label>Retained Job Job</label>
-                                    <input type="text" name='' class="form-control form-rad" placeholder="Number of retained employee this year, ex. 2">
                                 </div>
                                 <div class="mb-3">
                                     <label>Franchise</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="has_franchise" class="form-select" aria-label="Default select example">
                                         <option selected>Is your business located in Urban Area?</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
                                     </select>
                                 </div> 
-                                <br><br>
-                                <h2>Loan Application</h2>
+                                <div class="mb-3">
+                                    <label>Number of Employee</label>
+                                    <input type="text" name="number_of_employee" class="form-control" placeholder="Number of employee, ex. 4">
+                                </div>
+                                <div name="created_job" class="mb-3">
+                                    <label>Created Job</label>
+                                    <input type="text" name="created_job" class="form-control" placeholder="Number of new employee this year, ex. 2">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Retained Job</label>
+                                    <input type="text" name="retained_job" class="form-control" placeholder="Number of retained employee this year, ex. 2">
+                                </div>
+                                <br>
+                                <h4 style="font-weight: bold;">Loan Application</h4>
                                 <div class="mb-3">
                                     <label>Real Estate</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="real_estate" class="form-select" aria-label="Default select example">
                                         <option selected>Loan application backed up by real estate?</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label>Loan Documentation</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="loan_documentation" class="form-select" aria-label="Default select example">
                                         <option selected>Select loan documentation type</option>
-                                        <option value="LowDoc">LowDoc</option>
-                                        <option value="Non-LowDoc">No</option>
+                                        <option value="1">LowDoc</option>
+                                        <option value="0">Non LowDoc</option>
                                     </select>
                                 </div>
-                                <div class="mb-3 form-group form-padding">
+                                <div class="mb-3">
                                     <label>Loan Requested</label>
-                                    <input type="text" name='' class="form-control form-rad" placeholder="Loan amount requested (in USD)">
+                                    <input type="text" name="loan_requested" class="form-control" placeholder="Loan amount requested (in USD)">
                                 </div>
-                                </div><div class="mb-3 form-group form-padding">
+                                <div class="mb-3">
                                     <label>Terms of Loan</label>
-                                    <input type="text" name='' class="form-control form-rad" placeholder="Term in months">
+                                    <input type="text" name="term" class="form-control" placeholder="Term in months">
                                 </div>
-                                <div class="col-12">
+                                <div class="mb-3">
                                     <button class="btn btn-primary" type="submit">Submit form</button>
                                 </div>
+                                <br>
                             </div>
                         </form>
                     </div>
+                    {{ prediction_text }}
                 </div>
             </div>
             <div class="col-md-6">

@@ -4,6 +4,7 @@ from flask import Flask,render_template,request,redirect,url_for,session,flash
 import pymysql
 import MySQLdb.cursors
 import re
+import numpy as np
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'bangkit123'
@@ -84,6 +85,29 @@ def analisis():
     #if 'loggedin' in session:
     return render_template('features/analisis.html',title="Analisis")
     #return redirect('login')
+
+@app.route('/predict',methods=['POST'])
+def predict():
+
+    #int_features = [int(x) for x in request.form.values()]
+    #final_features = [np.array(int_features)]
+
+    # Assuming you have a MultiDict object called `my_dict`
+    print(1)
+    values_generator = request.form.values()
+    #print(my_list)
+
+    # Iterate over the generator and print each value
+    for value in values_generator:
+        print(value)
+
+
+    return render_template('features/analisis.html', prediction_text='Sales should be $ {}'.format(request.form.values()))
+    #prediction = model.predict(final_features)
+
+    #output = round(prediction[0], 2)
+
+    #return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
 
 #Home
 @app.route('/')
