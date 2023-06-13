@@ -5,6 +5,7 @@ import pymysql
 import MySQLdb.cursors
 import re
 import numpy as np
+import pickle
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'bangkit123'
@@ -88,21 +89,61 @@ def analisis():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    list_request = []
+    list_request.append(request.form['term'])
+    list_request.append(request.form['number_of_employee'])
+    list_request.append(request.form['new_existing_business'])
+    list_request.append(request.form['created_job'])
+    list_request.append(request.form['retained_job'])
+    list_request.append(request.form['urban_area'])
+    list_request.append(request.form['loan_documentation'])
+    list_request.append(request.form['loan_requested'])
+    list_request.append(request.form['has_franchise'])
+    list_request.append(request.form['real_estate'])
 
-    #int_features = [int(x) for x in request.form.values()]
-    #final_features = [np.array(int_features)]
+    # State One Hot Encode
+    state = [0] * 51
+    state_idx = int(request.form['state'])
+    state[state_idx-1] = 1
 
-    # Assuming you have a MultiDict object called `my_dict`
-    print(1)
-    values_generator = request.form.values()
-    #print(my_list)
+    # NAICS One Hot Encode 
+    naics_code = [0] * 21
+    naics_idx = int(request.form['business_sector'])
+    naics_code[naics_idx] = 1
+
+    # Compiling 
+    list_request = list_request + state + naics_code
+
+    # SBA Coverage Calculation 
+    sba_coverage = int(request.form['sba_covered']) / int(request.form['loan_requested']) * 100
+    list_request.append(sba_coverage)
 
     # Iterate over the generator and print each value
-    for value in values_generator:
-        print(value)
+    print(list_request)
+    print(len(list_request))
 
+    # import scaler
+    sc_file_path = "ML/pre_process_scaler.pkl"
+    with open(sc_file_path, 'rb') as file:
+        scaler_fixed = pickle.load(file)
 
-    return render_template('features/analisis.html', prediction_text='Sales should be $ {}'.format(request.form.values()))
+    # import model 
+    file_path = "ML/model_fixed.pickle"
+    with open(file_path, 'rb') as file:
+        model_fixed = pickle.load(file)
+    print(122312143)
+    # prediction
+    int_list_req = [int(x) for x in list_request]
+    print(int_list_req)
+    final_features = np.array(int_list_req)
+    print(final_features)
+    final_data_2d = final_features.reshape(1, -1)
+    print(final_data_2d)
+    scaled_final_data = scaler_fixed.transform(final_data_2d)
+    print(scaled_final_data)
+    predict_data = model_fixed.predict(scaled_final_data)
+    #predict_data = 0
+    return render_template('features/analisis.html', prediction_text='Sales should be $ {}'.format(predict_data))
     #prediction = model.predict(final_features)
 
     #output = round(prediction[0], 2)
