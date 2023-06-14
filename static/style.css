@@ -102,6 +102,11 @@ h3{
   font-weight: bolder;
   text-align: center;
 }
+.panel {
+  background-color: white;
+  margin-bottom: 10%;
+  /* Add any other styles you want to customize */
+}
 
 
 h1{

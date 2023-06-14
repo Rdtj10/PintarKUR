@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/044fa3f380.js" crossorigin="anonymous"></script>
-    <title>{% block title %} {{ title }} {% endblock %}</title>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Roboto:wght@100&display=swap');</style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -40,7 +33,7 @@
                                 <br>
                                 <h4 style="font-weight: bold;">Business Information</h4>
                                 <div class="mb-3">
-                                    <label>State</label>
+                                    <label class="form-label">State</label>
                                     <select name="state" class="form-select" aria-label="State">
                                         <option selected>Select your business's state location</option>
                                         <option value="1">AK - Alaska</option>
@@ -97,14 +90,14 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Area (Urban/Rural)</label>
+                                    <label class="form-label">Area (Urban/Rural)</label>
                                     <select name= "urban_area" class="form-select" aria-label="Default select example">
                                         <option value="1">Urban</option>
                                         <option value="2">Rural</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Business Sector</label>
+                                    <label class="form-label">Business Sector</label>
                                     <select name="business_sector" class="form-select" aria-label="Default select example">
                                         <option selected>Is your business located in Urban Area?</option>
                                         <option value="1">11 - Agriculture, forestry, fishing and hunting</option>
@@ -149,7 +142,7 @@
                                     <label>Number of Employee</label>
                                     <input type="text" name="number_of_employee" class="form-control" placeholder="Number of employee, ex. 4">
                                 </div>
-                                <div name="created_job" class="mb-3">
+                                <div class="mb-3">
                                     <label>Created Job</label>
                                     <input type="text" name="created_job" class="form-control" placeholder="Number of new employee this year, ex. 2">
                                 </div>
