@@ -1,12 +1,14 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+import os
 from flask_mysqldb import MySQL
 from flask import Flask,render_template,request,redirect,url_for,session,flash
-import pymysql
 import MySQLdb.cursors
 import re
 import numpy as np
 import pickle
 import tensorflow as tf
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'bangkit123'
@@ -157,4 +159,5 @@ def predict():
     return render_template('home/predict.html', predict_score=predict_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT"))
+    app.run(host='0.0.0.0', port=port)
