@@ -6,6 +6,7 @@ import MySQLdb.cursors
 import re
 import numpy as np
 import pickle
+import tensorflow as tf
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'bangkit123'
@@ -14,6 +15,11 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'pintarkur'
 mysql = MySQL(app)
+model_try = None  # Global variable to store the loaded model
+
+def load_model():
+    global nn_model
+    nn_model = tf.keras.models.load_model('ML/model.h5')
 
 #Authentication
 @app.route('/login', methods=['GET', 'POST'])
@@ -127,28 +133,18 @@ def predict():
     with open(sc_file_path, 'rb') as file:
         scaler_fixed = pickle.load(file)
 
-    # import model 
-    file_path = "ML/model_fixed.pickle"
-    with open(file_path, 'rb') as file:
-        model_fixed = pickle.load(file)
-    print(122312143)
+    # load model 
+    load_model()
+
     # prediction
     int_list_req = [int(x) for x in list_request]
-    print(int_list_req)
     final_features = np.array(int_list_req)
-    print(final_features)
     final_data_2d = final_features.reshape(1, -1)
-    print(final_data_2d)
     scaled_final_data = scaler_fixed.transform(final_data_2d)
-    print(scaled_final_data)
-    predict_data = model_fixed.predict(scaled_final_data)
-    #predict_data = 0
-    return render_template('features/analisis.html', prediction_text='Sales should be $ {}'.format(predict_data))
-    #prediction = model.predict(final_features)
-
-    #output = round(prediction[0], 2)
-
-    #return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
+    predict_data = nn_model.predict(scaled_final_data)[0][0]
+    predict_data = '{:.2f}'.format(predict_data)
+    predict_data = float(predict_data)*100
+    return render_template('features/predict.html', predict_score=predict_data)
 
 #Home
 @app.route('/')
