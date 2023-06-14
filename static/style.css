@@ -108,6 +108,10 @@ h3{
   /* Add any other styles you want to customize */
 }
 
+.small-font {
+  font-size: smaller;
+  text-align: left;
+}
 
 h1{
   color: #2f3542;

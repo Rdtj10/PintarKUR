@@ -154,7 +154,7 @@ def predict():
     predict_data = nn_model.predict(scaled_final_data)[0][0]
     predict_data = '{:.2f}'.format(predict_data)
     predict_data = float(predict_data)*100
-    return render_template('features/predict.html', predict_score=predict_data)
+    return render_template('home/predict.html', predict_score=predict_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
